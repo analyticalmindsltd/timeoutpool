@@ -5,8 +5,8 @@
 .. |CircleCI| image:: https://circleci.com/gh/analyticalmindsltd/timeoutpool.svg?style=svg
 .. _CircleCI: https://circleci.com/gh/analyticalmindsltd/timeoutpool
 
-.. |GitHub| image:: https://github.com/analyticalmindsltd/timeoutpool/workflows/Python%20package/badge.svg?branch=master
-.. _GitHub: https://github.com/analyticalmindsltd/timeoutpool/workflows/Python%20package/badge.svg?branch=master
+.. |GitHub| image:: https://github.com/analyticalmindsltd/timeoutpool/actions/workflows/pythonpackage.yml/badge.svg
+.. _GitHub: https://github.com/analyticalmindsltd/timeoutpool/actions/workflows/pythonpackage.yml/badge.svg
 
 .. |Codecov| image:: https://codecov.io/gh/analyticalmindsltd/timeoutpool/branch/main/graph/badge.svg?token=5BKgmoADMw
 .. _Codecov: https://codecov.io/gh/analyticalmindsltd/timeoutpool

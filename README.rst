@@ -26,7 +26,6 @@
 .. |License| image:: https://img.shields.io/badge/license-MIT-brightgreen
 .. _License: https://img.shields.io/badge/license-MIT-brightgreen
 
-
 timeoutpool: a process-pool with timeout per process
 ====================================================
 

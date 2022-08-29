@@ -8,7 +8,7 @@
 .. |GitHub| image:: https://github.com/analyticalmindsltd/timeoutpool/workflows/Python%20package/badge.svg?branch=master
 .. _GitHub: https://github.com/analyticalmindsltd/timeoutpool/workflows/Python%20package/badge.svg?branch=master
 
-.. |Codecov| image:: https://codecov.io/gh/analyticalmindsltd/timeoutpool/branch/master/graph/badge.svg?token=GQNNasvi4z
+.. |Codecov| image:: https://codecov.io/gh/analyticalmindsltd/timeoutpool/branch/master/graph/badge.svg?token=5BKgmoADMw
 .. _Codecov: https://codecov.io/gh/analyticalmindsltd/timeoutpool
 
 .. |pylint| image:: https://img.shields.io/badge/pylint-10.0-brightgreen

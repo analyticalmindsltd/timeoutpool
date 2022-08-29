@@ -1,58 +1,5 @@
-.. -*- mode: rst -*-
-
-|CircleCI|_ |GitHub|_ |Codecov|_ |pylint|_ |ReadTheDocs|_ |PythonVersion|_ |PyPi|_ |License|_
-
-.. |CircleCI| image:: https://circleci.com/gh/analyticalmindsltd/timeoutpool.svg?style=svg
-.. _CircleCI: https://circleci.com/gh/analyticalmindsltd/timeoutpool
-
-.. |GitHub| image:: https://github.com/analyticalmindsltd/timeoutpool/workflows/Python%20package/badge.svg?branch=master
-.. _GitHub: https://github.com/analyticalmindsltd/timeoutpool/workflows/Python%20package/badge.svg?branch=master
-
-.. |Codecov| image:: https://codecov.io/gh/analyticalmindsltd/timeoutpool/branch/master/graph/badge.svg?token=GQNNasvi4z
-.. _Codecov: https://codecov.io/gh/analyticalmindsltd/timeoutpool
-
-.. |pylint| image:: https://img.shields.io/badge/pylint-10.0-brightgreen
-.. _pylint: https://img.shields.io/badge/pylint-10.0-brightgreen
-
-.. |ReadTheDocs| image:: https://readthedocs.org/projects/timeoutpool/badge/?version=latest
-.. _ReadTheDocs: https://timeoutpool.readthedocs.io/en/latest/?badge=latest
-
-.. |PythonVersion| image:: https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-brightgreen
-.. _PythonVersion: https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-brightgreen
-
-.. |PyPi| image:: https://badge.fury.io/py/timeoutpool.svg
-.. _PyPi: https://badge.fury.io/py/timeoutpool
-
-.. |License| image:: https://img.shields.io/badge/license-MIT-brightgreen
-.. _License: https://img.shields.io/badge/license-MIT-brightgreen
-
-timeoutpool: a process-pool with timeout per process
-====================================================
-
-Latest News
------------
-
-- the 0.1.0 version of the `timeoutpool` package implementing a process pool with timeout is released
-- 100% test coverage
-- 10.0 PEP8 conformancy (by pylint)
-
-Introduction
-------------
-
-The package implements a distributed processing pool with the possibility to time-out each job independently.
-
-The use-case to be solved by the package: there is an algorithm to be executed (potentially on various datasets) with various parameterizations. The goal is to discover the operation/limitations of the algorithm under various circumstances. Some parameterizations or some special datasets might lead to extremely long runtimes. The user is interested in the outcome of those cases when the algorithm finishes in N seconds.
-
-In order to utilize all available resources (usually more than one CPU cores), some multiprocessing solution is needed, which continouosly monitors the execution time of the jobs, and if the runtime of a job exceeds the timeout limit, shuts it down and starts the next job immediately.
-
-For various reasons, we found that this functionality is not available out-of-the-box in the popular distributed computing toolkits of Python, like `multiprocessing`, `joblib`, `concurrent.futures`. Although these packages have some timeout functionalities, they are not applied at the job/process level, but for an entire set or pool of jobs, timing out the entire batch even if one job times out.
-
-The `timeoutpool` package implements the aforementioned functionality in terms of threads from the `threading` package and processes from `multiprocessing` package. The user can specify a list of jobs to be executed (through an iterator or generator), the number of worker processes (N) and the timeout limit (T). The `TimeoutPool` object then starts N threads pooling the jobs to N worker processes, each monitored by watchdog threads. If the runtime of a job exceeds T, the process is killed and `None` is returned or some predefined method is executed.
-
-For a complete documentation see https://timeoutpool.readthedocs.io/en/latest/
-
 Examples
---------
+********
 
 Using the `TimeoutJobBase` interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -377,14 +324,3 @@ many more parameterizations and higher timeout limit values could be used.
 Due to the structured outcome in the timeout cases, the results can be summarized easily.
 The entire operation took less then 3 seconds (executing 2 jobs in parallel 3 times),
 even though fitting with 1000 estimators could take several seconds.
-
-
-Contribution
-------------
-
-
-Any contribution is welcome!
-
-    * fork the GitHub repository at http://github.com/gykovacs/timeoutpool,
-    * open a discussion on GitHub,
-    * or contact me at gyuriofkovacs@gmail.com.
